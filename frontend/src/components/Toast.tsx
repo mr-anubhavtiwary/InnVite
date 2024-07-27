@@ -10,7 +10,7 @@ const Toast = ({ message, type, onClose }: ToastProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 5000);
+    }, 3000);
 
     return () => {
       clearTimeout(timer);
@@ -24,8 +24,8 @@ const Toast = ({ message, type, onClose }: ToastProps) => {
 
   return (
     <div className={styles}>
-      <div className="flex justify-center items-center">
-        <span className="text-lg font-semibold">{message}</span>
+      <div className='flex justify-center items-center'>
+        <span className='text-lg font-semibold'>{message}</span>
       </div>
     </div>
   );
