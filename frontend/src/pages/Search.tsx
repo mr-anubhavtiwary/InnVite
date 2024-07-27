@@ -101,7 +101,7 @@ const Search = () => {
             {search.destination ? ` in ${search.destination}` : ""}
           </span>
           <select 
-            // aria-label="State"
+            aria-label="State"
             value={sortOption}
             onChange={(event) => setSortOption(event.target.value)}
             className="p-2 border rounded-md"

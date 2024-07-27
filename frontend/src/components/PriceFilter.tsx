@@ -8,7 +8,7 @@ type Props = {
       <div>
         <h4 className="text-md font-semibold mb-2"> Max Price</h4>
         <select 
-        //   aria-label="State"
+          aria-label="State"
           className="p-2 border rounded-md w-full"
           value={selectedPrice}
           onChange={(event) =>
