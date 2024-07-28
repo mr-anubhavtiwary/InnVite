@@ -13,6 +13,10 @@ import MyHotels from "./pages/MyHotels";
 import EditHotel from "./pages/EditHotel";
 import Search from "./pages/Search";
 import Detail from "./pages/Detail";
+import Booking from "./pages/Booking";
+import MyBookings from "./pages/MyBookings";
+import Home from "./pages/Home";
+
 
 const App = () => {
   const { isLoggedIn } = useAppContext();
@@ -20,15 +24,15 @@ const App = () => {
     <Router>
       <Routes>
         <Route
-          path='/'
+          path="/"
           element={
             <Layout>
-              <p>Home Page</p>
+              <Home />
             </Layout>
           }
         />
         <Route
-          path='/search'
+          path="/search"
           element={
             <Layout>
               <Search />
@@ -36,7 +40,7 @@ const App = () => {
           }
         />
         <Route
-          path='/detail/:hotelId'
+          path="/detail/:hotelId"
           element={
             <Layout>
               <Detail />
@@ -44,7 +48,7 @@ const App = () => {
           }
         />
         <Route
-          path='/register'
+          path="/register"
           element={
             <Layout>
               <Register />
@@ -52,25 +56,27 @@ const App = () => {
           }
         />
         <Route
-          path='/sign-in'
+          path="/sign-in"
           element={
             <Layout>
               <SignIn />
             </Layout>
           }
         />
+
         {isLoggedIn && (
           <>
             <Route
-              path='/edit-hotel/:hotelId'
+              path="/hotel/:hotelId/booking"
               element={
                 <Layout>
-                  <EditHotel />
+                  <Booking />
                 </Layout>
               }
             />
+
             <Route
-              path='/add-hotel'
+              path="/add-hotel"
               element={
                 <Layout>
                   <AddHotel />
@@ -78,19 +84,37 @@ const App = () => {
               }
             />
             <Route
-              path='/my-hotels'
+              path="/edit-hotel/:hotelId"
+              element={
+                <Layout>
+                  <EditHotel />
+                </Layout>
+              }
+            />
+            <Route
+              path="/my-hotels"
               element={
                 <Layout>
                   <MyHotels />
                 </Layout>
               }
             />
+            <Route
+              path="/my-bookings"
+              element={
+                <Layout>
+                  <MyBookings />
+                </Layout>
+              }
+            />
           </>
         )}
-        <Route path='*' element={<Navigate to='/' />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
 };
 
 export default App;
+
+// stripe test card 4242 4242 4242 4242
